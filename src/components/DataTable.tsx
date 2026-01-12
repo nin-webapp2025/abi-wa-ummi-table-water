@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface Column<T> {
   key: keyof T | string;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { formatNaira } from '../utils/helpers';
 
 interface SimpleChartProps {
