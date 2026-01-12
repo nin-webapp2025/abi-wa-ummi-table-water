@@ -1,0 +1,171 @@
+import type { Production, Sales, Resource, Expense } from '../types';
+
+// Mock data for demonstration
+const today = new Date().toISOString().split('T')[0];
+const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+const twoDaysAgo = new Date(Date.now() - 172800000).toISOString().split('T')[0];
+
+export const MOCK_PRODUCTION: Production[] = [
+  {
+    id: '1',
+    date: today,
+    bags_produced: 500,
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    notes: 'Normal production day',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '2',
+    date: yesterday,
+    bags_produced: 450,
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    notes: 'Slight delay due to power issue',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '3',
+    date: twoDaysAgo,
+    bags_produced: 550,
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    notes: 'High production day',
+    created_at: new Date().toISOString(),
+  },
+];
+
+export const MOCK_SALES: Sales[] = [
+  {
+    id: '1',
+    date: today,
+    bags_sold: 400,
+    revenue: 160000,
+    customer_name: 'Musa Trading Co.',
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    notes: 'Regular customer',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '2',
+    date: today,
+    bags_sold: 50,
+    revenue: 20000,
+    customer_name: 'Local Shop',
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '3',
+    date: yesterday,
+    bags_sold: 380,
+    revenue: 152000,
+    customer_name: 'Ahmed Distributors',
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    notes: 'Bulk order',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '4',
+    date: twoDaysAgo,
+    bags_sold: 420,
+    revenue: 168000,
+    customer_name: 'Kano Retailers',
+    staff_id: '2',
+    staff_name: 'Staff Member',
+    created_at: new Date().toISOString(),
+  },
+];
+
+export const MOCK_RESOURCES: Resource[] = [
+  {
+    id: '1',
+    name: 'Nylon Film Rolls',
+    category: 'nylon',
+    quantity: 50,
+    unit: 'rolls',
+    cost_per_unit: 15000,
+    last_restocked: yesterday,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: '2',
+    name: 'Chlorine Solution',
+    category: 'chemical',
+    quantity: 120,
+    unit: 'liters',
+    cost_per_unit: 800,
+    last_restocked: twoDaysAgo,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: '3',
+    name: 'Diesel Fuel',
+    category: 'fuel',
+    quantity: 200,
+    unit: 'liters',
+    cost_per_unit: 950,
+    last_restocked: today,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: '4',
+    name: 'Packaging Labels',
+    category: 'other',
+    quantity: 5000,
+    unit: 'pieces',
+    cost_per_unit: 5,
+    last_restocked: yesterday,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+];
+
+export const MOCK_EXPENSES: Expense[] = [
+  {
+    id: '1',
+    date: today,
+    category: 'Utilities',
+    description: 'Electricity bill',
+    amount: 25000,
+    staff_id: '1',
+    staff_name: 'Admin User',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '2',
+    date: yesterday,
+    category: 'Transportation',
+    description: 'Delivery van fuel',
+    amount: 15000,
+    staff_id: '1',
+    staff_name: 'Admin User',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '3',
+    date: twoDaysAgo,
+    category: 'Maintenance',
+    description: 'Machine servicing',
+    amount: 30000,
+    staff_id: '1',
+    staff_name: 'Admin User',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '4',
+    date: twoDaysAgo,
+    category: 'Supplies',
+    description: 'Cleaning supplies',
+    amount: 8000,
+    staff_id: '1',
+    staff_name: 'Admin User',
+    created_at: new Date().toISOString(),
+  },
+];
